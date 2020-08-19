@@ -1,4 +1,4 @@
-import React from 'react'; 
+import React from 'react';  
 import { Button } from '@material-ui/core'; 
 import { Delete } from '@material-ui/icons';
 
@@ -27,4 +27,4 @@ const TableRow = (props) => {
     )
 }
 
-export default TableRow;
+export default TableRow
