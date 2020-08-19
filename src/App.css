@@ -1,0 +1,88 @@
+.app-header {
+  height: 70px;
+  background-color: #0076ff;
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  color: #FFF;
+}
+
+.app-header img {
+  height: 40px;
+  margin-left: 16px;
+  color: mistyrose;
+}
+
+.app-header-title {
+  margin-left: 16px;
+  font-size: 1.2em;
+}
+
+.app-content { margin: 16px; } 
+
+/* Item Input Form Styles */
+input, select {
+  border-radius: 5px;
+  border: 1px solid #c2c2c2;
+  width: 150px;
+  font-size: 1.2rem;
+  font-family: inherit;
+}
+
+input { padding: 10px; }
+
+.inputForm {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.inputForm div {
+  margin-right: 30px;
+  position: relative;
+}
+
+.inputForm label {
+  position: absolute;
+  top: -20px;
+} 
+
+/* Hide increment arrows in Firefox */ 
+input[type="number"] {-moz-appearance:textfield;}
+
+/* Hide increment arrows in Chrome, Safari, Edge */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Filter by Category */
+.filterSelect label {margin-right: 10px;}
+
+select { height: 40px; }
+
+/* Table styles */
+table {
+  margin-top: 20px;  
+  border-collapse: collapse; 
+}
+
+table, th, td {
+  border: 1px solid #bbbbbb;
+  text-transform: capitalize;
+}
+
+th:not(:last-of-type) {
+  cursor: pointer;
+  overflow: auto;
+  min-width: 150px;
+  width: calc(100% / 5);
+}  
+
+th {padding: 10px;}
+td {padding: 5px 10px;}
+
+.tableHeadings { background-color: #dfdfdf;} 
+
+.placeholderRow {height: 40px;}
