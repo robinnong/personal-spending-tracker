@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/personal-spending-tracker/static/css/main.9ec4dd91.chunk.css",
-    "main.js": "/personal-spending-tracker/static/js/main.31fac92b.chunk.js",
-    "main.js.map": "/personal-spending-tracker/static/js/main.31fac92b.chunk.js.map",
+    "main.js": "/personal-spending-tracker/static/js/main.4519868e.chunk.js",
+    "main.js.map": "/personal-spending-tracker/static/js/main.4519868e.chunk.js.map",
     "runtime-main.js": "/personal-spending-tracker/static/js/runtime-main.15adfbea.js",
     "runtime-main.js.map": "/personal-spending-tracker/static/js/runtime-main.15adfbea.js.map",
-    "static/js/2.100ee3a8.chunk.js": "/personal-spending-tracker/static/js/2.100ee3a8.chunk.js",
-    "static/js/2.100ee3a8.chunk.js.map": "/personal-spending-tracker/static/js/2.100ee3a8.chunk.js.map",
+    "static/js/2.5aa4ce95.chunk.js": "/personal-spending-tracker/static/js/2.5aa4ce95.chunk.js",
+    "static/js/2.5aa4ce95.chunk.js.map": "/personal-spending-tracker/static/js/2.5aa4ce95.chunk.js.map",
     "index.html": "/personal-spending-tracker/index.html",
-    "precache-manifest.fa6d2c66545e3002b7f7281da2bdd0be.js": "/personal-spending-tracker/precache-manifest.fa6d2c66545e3002b7f7281da2bdd0be.js",
+    "precache-manifest.ea85c45005075cb7e877a5e03e266a52.js": "/personal-spending-tracker/precache-manifest.ea85c45005075cb7e877a5e03e266a52.js",
     "service-worker.js": "/personal-spending-tracker/service-worker.js",
     "static/css/main.9ec4dd91.chunk.css.map": "/personal-spending-tracker/static/css/main.9ec4dd91.chunk.css.map",
-    "static/js/2.100ee3a8.chunk.js.LICENSE.txt": "/personal-spending-tracker/static/js/2.100ee3a8.chunk.js.LICENSE.txt"
+    "static/js/2.5aa4ce95.chunk.js.LICENSE.txt": "/personal-spending-tracker/static/js/2.5aa4ce95.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.15adfbea.js",
-    "static/js/2.100ee3a8.chunk.js",
+    "static/js/2.5aa4ce95.chunk.js",
     "static/css/main.9ec4dd91.chunk.css",
-    "static/js/main.31fac92b.chunk.js"
+    "static/js/main.4519868e.chunk.js"
   ]
 }
