@@ -2,12 +2,8 @@ import { connect } from 'react-redux';
 import { setFilter } from '../redux/actions'; 
 import SelectFilter from './SelectFilter';
 
-const getFilters = (categories) => {
-  return categories
-}
-
 const mapStateToProps = (state) => ({
-  categories: getFilters(state.categories) 
+  categories: state.categories
 }) 
 
 const mapDispatchToProps = (dispatch) => ({

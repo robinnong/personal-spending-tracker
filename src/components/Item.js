@@ -1,5 +1,4 @@
-import React from 'react'; 
-import PropTypes from 'prop-types' 
+import React from 'react';  
 import { Button } from '@material-ui/core'; 
 import { Delete } from '@material-ui/icons';
 
@@ -23,14 +22,6 @@ const Item = ({ onClick, date, name, category, price }) => (
             </Button>
         </td>
     </tr> 
-) 
-
-Item.propTypes = {
-    onClick: PropTypes.func.isRequired, 
-    date: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    category: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired
-}
+)  
 
 export default Item

@@ -14,13 +14,13 @@ const AddItem = ({ dispatch }) => {
     setCurrentItem(newItem);
   }  
 
-  return(
+  return (
     <form 
       action="" 
       className="inputForm" 
       onSubmit={(e) => {
         e.preventDefault(); 
-        dispatch(addItem(currentItem))
+        dispatch(addItem(currentItem)) 
         dispatch(addCategory(currentItem.category))
       }} 
       onChange={handleUserInput}
