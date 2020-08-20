@@ -18,13 +18,13 @@ h3,
 input, 
 button, 
 p {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 html {
-    font-size: 62.5%;
-    scroll-behavior: smooth;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 /* removes the list bullets */
@@ -32,11 +32,14 @@ ul {list-style: none;}
 
 /* removes default syling from links */
 a {
-	color: inherit;
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: all 0.3s; 
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s; 
 } 
+
+table, th, td,
+select { text-transform: capitalize; }
 
 body {
   background-color: #1a1d35; 
@@ -81,19 +84,15 @@ input, select {
   font-family: inherit;
   border-radius: 5px;
   border: 1px solid transparent;
-  width: 150px; 
+  width: 180px; 
   font-family: inherit;
   color: inherit;
   background-color: #2d293f; 
 } 
 
-input { 
-  padding: 10px;
-}
+input { padding: 10px; }
 
-input:focus {
-  border: 1px solid #ffffff;
-}
+input:focus { border: 1px solid #ffffff; }
 
 .inputForm {
   margin-top: 50px;
@@ -109,8 +108,8 @@ input:focus {
 
 .inputForm label {
   position: absolute;
-  top: -25px;
-  color: white;
+  top: -20px;
+  color: #ebebeb;
   font-size: inherit;
   font-size: 1.4rem;
   font-family: inherit;
@@ -138,24 +137,20 @@ select {
   font-family: inherit;
   text-transform: uppercase;
   font-weight: 600;
-  font-size: 1.4rem; 
+  font-size: 2.4rem; 
   height: 40px;
   width: 40px;
   border-radius: 50%;
   border: none;
   cursor: pointer;
-}
+} 
 
 /* Table styles */
 table {
-  margin-top: 20px;  
+  margin-top: 50px;  
   border-collapse: collapse;  
   background-color: #25253d; 
   box-shadow: 3px 3px 8px 2px rgba(0, 0, 0, 0.199);
-}
-
-table, th, td {
-  text-transform: capitalize;
 }
 
 th {
@@ -166,7 +161,7 @@ th {
 th:not(:last-of-type) {
   cursor: pointer;
   overflow: auto;
-  min-width: 150px;
+  min-width: 180px;
   width: calc(100% / 5);
 }  
 

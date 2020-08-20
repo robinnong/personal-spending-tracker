@@ -1,8 +1,6 @@
 import React, { useState } from 'react';  
 import { connect } from 'react-redux';
-import { addItem, addCategory } from '../redux/actions';
-import { TextField } from '@material-ui/core';
-import { Add } from '@material-ui/icons';
+import { addItem } from '../redux/actions';  
 
 const AddItem = ({ dispatch }) => {
   const [currentItem, setCurrentItem] = useState({}); 
@@ -20,8 +18,7 @@ const AddItem = ({ dispatch }) => {
       className="inputForm" 
       onSubmit={(e) => {
         e.preventDefault(); 
-        dispatch(addItem(currentItem)) 
-        dispatch(addCategory(currentItem.category))
+        dispatch(addItem(currentItem))  
       }} 
       onChange={handleUserInput}
     >
@@ -37,16 +34,12 @@ const AddItem = ({ dispatch }) => {
         <label htmlFor="price">Price</label>
         <input type="number" step="0.01" min="0" id="price" placeholder="1000.00" required />
       </div> 
-      <TextField
-        id="date"
-        label="Date"
-        type="date"
-        InputLabelProps={{
-          shrink: true,
-        }}
-      /> 
+      <div>
+        <label htmlFor="date">Date</label>
+        <input type="date" id="date" required /> 
+      </div>
       <button className="add" type="submit" aria-label="add item">
-        <Add />
+        +
       </button>
     </form>
   )
