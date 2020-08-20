@@ -4,8 +4,7 @@ import { sortColumn } from '../redux/actions';
 import Item from './Item';
 import { Sort, SortByAlpha } from '@material-ui/icons';
 
-const List = ({ items, deleteItem, dispatch }) => { 
-  return (
+const List = ({ items, deleteItem, dispatch }) => ( 
     <table>
         <thead>
             <tr className="tableHeadings">
@@ -39,8 +38,7 @@ const List = ({ items, deleteItem, dispatch }) => {
                 ) 
             })} 
         </tbody>
-    </table> 
-  )
-}
+    </table>  
+)
 
 export default connect()(List)

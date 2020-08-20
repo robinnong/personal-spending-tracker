@@ -4,9 +4,8 @@ const items = (state = SampleData, action) => {
   switch (action.type) {
     case 'ADD_ITEM':
       return [
-        // makes a copy of the state
+        // makes a copy of the state and adds new object!
         ...state,
-        // Adding a new object onto the state array! 
         action.object 
       ]
     case 'DELETE_ITEM':
