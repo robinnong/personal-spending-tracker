@@ -1,4 +1,6 @@
-const items = (state = [], action) => {
+import { SampleData } from '../../components/helpers';
+
+const items = (state = SampleData, action) => {
   switch (action.type) {
     case 'ADD_ITEM':
       return [

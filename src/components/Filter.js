@@ -1,21 +1,17 @@
-import React from 'react';
+import { connect } from 'react-redux';
+import { setFilter } from '../redux/actions'; 
+import SelectFilter from './SelectFilter';
 
-const Filter = (props) => {
-  return(
-    <form action="" onChange={props.handleCategoryChange} className="filterSelect">
-      <label htmlFor="filter">Show</label>
-      <select name="filter" id="filter">
-        <option value="">All</option>
-        {props.categories.map((category, index) => {
-          return (
-            <option
-              key={index}
-              value={category}>{category}</option>
-          )
-        })}
-      </select>
-    </form> 
-  )
+const getFilters = (categories) => {
+  return categories
 }
 
-export default Filter
+const mapStateToProps = (state) => ({
+  categories: getFilters(state.categories) 
+}) 
+
+const mapDispatchToProps = (dispatch) => ({
+  handleChange: (selection) => dispatch(setFilter(selection))
+}) 
+
+export default connect(mapStateToProps, mapDispatchToProps)(SelectFilter)

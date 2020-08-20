@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
 import items from './items';
-import visibilityFilter from './visibilityFilter';
+import categories from './categories';
+import filterBy from './filterBy';
 
 export default combineReducers({
   items, 
-  visibilityFilter
+  categories,
+  filterBy
 })

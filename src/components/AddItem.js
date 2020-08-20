@@ -1,6 +1,6 @@
 import React, { useState } from 'react';  
 import { connect } from 'react-redux';
-import { addItem } from '../redux/actions';
+import { addItem, addCategory } from '../redux/actions';
 import { TextField } from '@material-ui/core';
 import { Add } from '@material-ui/icons';
 
@@ -21,6 +21,7 @@ const AddItem = ({ dispatch }) => {
       onSubmit={(e) => {
         e.preventDefault(); 
         dispatch(addItem(currentItem))
+        dispatch(addCategory(currentItem.category))
       }} 
       onChange={handleUserInput}
     >

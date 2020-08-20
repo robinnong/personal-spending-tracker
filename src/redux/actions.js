@@ -1,7 +1,10 @@
-let nextItemId = 0
+
+import { SampleData } from '../components/helpers';
+let nextItemId = SampleData.length
 
 const ADD_ITEM = 'ADD_ITEM'
 const DELETE_ITEM = 'DELETE_ITEM'
+const ADD_CATEGORY = 'ADD_CATEGORY'
 const SET_FILTER = 'SET_FILTER'
 
 // Action creators
@@ -16,11 +19,12 @@ export const deleteItem = id => ({
   id
 })
 
-export const setFilter = filter => ({
-  type: SET_FILTER, 
-  filter
+export const addCategory = text => ({
+  type: ADD_CATEGORY,
+  text
 })
 
-export const VisibilityFilters = {
-  SHOW_ALL: 'SHOW_ALL'
-}
+export const setFilter = text => ({
+  type: SET_FILTER, 
+  text
+})
