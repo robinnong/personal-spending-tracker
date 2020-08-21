@@ -1,33 +1,45 @@
+import React from 'react'; 
 import { connect } from 'react-redux';
-import { deleteItem } from '../redux/actions.js';
-import List from './List';
+import { sortColumn } from '../redux/actions';
+import Item from './Item';
+import { Sort, SortByAlpha } from '@material-ui/icons';
 
-const getList = (items, filter, sort) => { 
-  let list = [...items].sort((a, b) => {
-      if (b[sort.column] > a[sort.column]) {
-            return 1;
-      } else if (b[sort.column] < a[sort.column]) {
-          return -1;
-      }
-      return 0;
-  });
-  if (sort.direction) {
-    list.reverse();
-  }
+const Table = ({ items, deleteItem, dispatch }) => ( 
+    <table>
+        <caption>Transaction History</caption>
+        <thead>
+            <tr className="tableHeadings">
+                <th onClick={() => dispatch(sortColumn("date"))}>
+                    Date
+                    <Sort /> 
+                </th>
+                <th onClick={() => dispatch(sortColumn("name"))}>
+                    Item 
+                    <SortByAlpha /> 
+                </th>
+                <th onClick={() => dispatch(sortColumn("category"))}>
+                    Category
+                    <SortByAlpha />
+                </th>
+                <th onClick={() => dispatch(sortColumn("price"))}>
+                    Total
+                    <Sort />
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>  
+            {items.map((item) => { 
+                return (
+                    <Item 
+                        key={item.id}
+                        {...item} 
+                        onClick={() => deleteItem(item.id)}
+                    />
+                ) 
+            })} 
+        </tbody>
+    </table>  
+)
 
-  if (filter !== "") { 
-    return list.filter(item => filter === item.category);
-  } else { 
-    return list;
-  } 
-}
-
-const mapStateToProps = state => ({
-  items: getList(state.items, state.filterBy, state.sorting)
-})
-
-const mapDispatchToProps = dispatch => ({
-  deleteItem: id => dispatch(deleteItem(id))
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(List);
+export default connect()(Table)

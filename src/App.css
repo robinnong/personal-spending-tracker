@@ -39,7 +39,7 @@ a {
 } 
 
 table, th, td,
-select { text-transform: capitalize; }
+select, option { text-transform: capitalize; }
 
 body {
   background-color: #1a1d35; 
@@ -90,7 +90,7 @@ input, select {
   background-color: #2d293f; 
 } 
 
-input { padding: 10px; }
+input, select { padding: 10px; }
 
 input:focus { border: 1px solid #ffffff; }
 
@@ -126,10 +126,10 @@ input::-webkit-inner-spin-button {
 }
 /* Filter by Category */
 .filterSelect label {margin-right: 10px;}
-
-select { 
-  height: 40px;
+ 
+select {   
   cursor: pointer;
+  margin-top: 20px;
 } 
 
 .add {
@@ -147,10 +147,19 @@ select {
 
 /* Table styles */
 table {
-  margin-top: 50px;  
+  margin-top: 20px;  
   border-collapse: collapse;  
   background-color: #25253d; 
   box-shadow: 3px 3px 8px 2px rgba(0, 0, 0, 0.199);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+caption {
+  text-align: left;
+  font-weight: 600;
+  font-size: 2rem;
+  margin-bottom: 10px;
 }
 
 th {

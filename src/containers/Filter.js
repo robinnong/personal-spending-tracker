@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { setFilter } from '../redux/actions'; 
-import SelectFilter from './SelectFilter';
+import SelectFilter from '../components/SelectFilter';
 
 const getCategories = (state) => { 
   let categories = state.map(item => item.category)

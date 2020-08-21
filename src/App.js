@@ -1,7 +1,7 @@
 import React from 'react';  
 import AddItem from './components/AddItem';
-import Filter from './components/Filter';
-import Table from './components/Table';  
+import Filter from './containers/Filter';
+import List from './containers/List';  
 import './App.css'; 
 
 const App = () => {      
@@ -14,7 +14,7 @@ const App = () => {
       <section>
         <AddItem />
         <Filter />
-        <Table />
+        <List />
       </section>
     </main>
   </>

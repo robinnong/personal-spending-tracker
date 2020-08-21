@@ -1,43 +1,73 @@
-import React, { useState } from 'react';  
+import React from 'react';  
 import { connect } from 'react-redux';
-import { addItem } from '../redux/actions';  
+import { addItem, setCurrentItem } from '../redux/actions';  
 
-const AddItem = ({ dispatch }) => {
-  const [currentItem, setCurrentItem] = useState({}); 
-  // Keeps track of user's input, saving the input to its corresponding property in the list item object
+const mapStateToProps = (state) => ({
+  currentItem: setCurrentItem(state.currentItem)
+}) 
+
+const AddItem = ({ dispatch, currentItem }) => { 
+   // Keeps track of user's input, saving the input to its corresponding property in the list item object
   const handleUserInput = (e) => {
-    const { id, value } = e.target;
-    let newItem = { ...currentItem };
-    newItem[id] = value.toLowerCase();
-    setCurrentItem(newItem);
-  }  
+    const { id, value } = e.target;  
+    dispatch(setCurrentItem({ field: id, val: value }));
+  }   
 
+  const {name, category, price, date} = currentItem.object;  
   return (
     <form 
       action="" 
       className="inputForm" 
       onSubmit={(e) => {
-        e.preventDefault(); 
-        dispatch(addItem(currentItem));
-        setCurrentItem({});
+        e.preventDefault();  
+        dispatch(addItem(currentItem.object));  
+        console.log("submitted")
       }} 
-      onChange={handleUserInput}
-    >
+    >  
       <div>
         <label htmlFor="name">Item</label>
-        <input type="text" id="name" value={currentItem.name} placeholder="Rent" required />
+        <input 
+          type="text" 
+          id="name" 
+          value={name} 
+          onChange={handleUserInput}
+          placeholder="Rent" 
+          required={true}
+        />
       </div>
       <div>
         <label htmlFor="category">Category</label>
-        <input type="text" id="category" value={currentItem.text} placeholder="Housing" required />
+        <input 
+          type="text" 
+          id="category" 
+          value={category} 
+          onChange={handleUserInput}
+          placeholder="Housing" 
+          required={true}
+        />
       </div>
       <div>
         <label htmlFor="price">Price</label>
-        <input type="number" step="0.01" min="0" id="price" value={currentItem.price}placeholder="1000.00" required />
+        <input 
+          type="number" 
+          step="0.01" 
+          min="0" 
+          id="price" 
+          value={price}
+          onChange={handleUserInput}
+          placeholder="1000.00" 
+          required={true}
+        />
       </div> 
       <div>
         <label htmlFor="date">Date</label>
-        <input type="date" id="date" value={currentItem.date} required /> 
+        <input 
+          type="date" 
+          id="date" 
+          onChange={handleUserInput}
+          value={date} 
+          required={true}
+        /> 
       </div>
       <button className="add" type="submit" aria-label="add item">
         +
@@ -46,4 +76,4 @@ const AddItem = ({ dispatch }) => {
   )
 }
 
-export default connect()(AddItem)
+export default connect(mapStateToProps)(AddItem)

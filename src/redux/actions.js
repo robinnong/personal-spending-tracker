@@ -4,6 +4,7 @@ let nextItemId = SampleData.length
 
 const ADD_ITEM = 'ADD_ITEM'
 const DELETE_ITEM = 'DELETE_ITEM' 
+const SET_CURRENT_ITEM = 'SET_CURRENT_ITEM'
 const SET_FILTER = 'SET_FILTER'
 const SORT_COLUMN = 'SORT_COLUMN'
 
@@ -17,6 +18,11 @@ export const addItem = object => ({
 export const deleteItem = id => ({
   type: DELETE_ITEM, 
   id
+})
+
+export const setCurrentItem = object => ({
+  type: SET_CURRENT_ITEM, 
+  object
 })
 
 export const sortColumn = text => ({
