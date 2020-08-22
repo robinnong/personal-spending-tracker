@@ -174,8 +174,7 @@ th:not(:last-of-type) {
   width: calc(100% / 5);
 }  
 
-th {padding: 15px;}
-td {padding: 12px 15px;}
+th, td {padding: 15px;} 
 
 .category span {
   font-size: 1.3rem;
