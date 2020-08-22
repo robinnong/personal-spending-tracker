@@ -3,10 +3,12 @@ import { SampleData } from '../../components/helpers';
 const items = (state = SampleData, action) => {
   switch (action.type) {
     case 'ADD_ITEM':
+      const item = { ...action.object }
+      item.price = parseFloat(item.price)
       return [
         // makes a copy of the state and adds new object!
         ...state,
-        action.object 
+        item 
       ]
     case 'DELETE_ITEM':
       return [...state].filter((item) => item.id !== action.id); 

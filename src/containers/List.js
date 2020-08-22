@@ -23,7 +23,7 @@ const getList = (items, filter, sort) => {
 }
 
 const calculateSum = data => {
-  const values = data.map(item => item.price);
+  const values = data.map(item => item.price); 
   return values.reduce((a, b) => a + b);
 }
 
