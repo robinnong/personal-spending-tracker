@@ -22,8 +22,14 @@ const getList = (items, filter, sort) => {
   } 
 }
 
+const calculateSum = data => {
+  const values = data.map(item => item.price);
+  return values.reduce((a, b) => a + b);
+}
+
 const mapStateToProps = state => ({
-  items: getList(state.items, state.filterBy, state.sorting)
+  items: getList(state.items, state.filterBy, state.sorting),
+  total: calculateSum(state.items)
 })
 
 const mapDispatchToProps = dispatch => ({

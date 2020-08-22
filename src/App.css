@@ -145,8 +145,20 @@ select {
   cursor: pointer;
 } 
 
+tbody tr:last-of-type {
+  border-top: 1px solid #ffffff1c;
+}
+
+.totalRow .label {
+  text-align: right;
+}
+
+.totalRow .value {
+  font-weight: 600;
+}
+
 /* Table styles */
-table {
+table { 
   margin-top: 20px;  
   border-collapse: collapse;  
   background-color: #25253d; 

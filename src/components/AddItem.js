@@ -2,26 +2,23 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { addItem, setCurrentItem } from '../redux/actions';  
 
-const mapStateToProps = (state) => ({
-  currentItem: setCurrentItem(state.currentItem)
-}) 
+const mapStateToProps = (state) => ({ current: state.currentItem });
 
-const AddItem = ({ dispatch, currentItem }) => { 
+const AddItem = ({ current, dispatch }) => { 
    // Keeps track of user's input, saving the input to its corresponding property in the list item object
   const handleUserInput = (e) => {
     const { id, value } = e.target;  
     dispatch(setCurrentItem({ field: id, val: value }));
-  }   
-
-  const {name, category, price, date} = currentItem.object;  
+  }     
+  const { name, category, price, date } = current;
+  
   return (
     <form 
       action="" 
       className="inputForm" 
       onSubmit={(e) => {
         e.preventDefault();  
-        dispatch(addItem(currentItem.object));  
-        console.log("submitted")
+        dispatch(addItem(current));  
       }} 
     >  
       <div>

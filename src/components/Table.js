@@ -2,9 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { sortColumn } from '../redux/actions';
 import Item from './Item';
-import { Sort, SortByAlpha } from '@material-ui/icons';
+import { Sort, SortByAlpha } from '@material-ui/icons';  
 
-const Table = ({ items, deleteItem, dispatch }) => ( 
+const Table = ({ items, total, deleteItem, dispatch }) => ( 
     <table>
         <caption>Transaction History</caption>
         <thead>
@@ -38,6 +38,12 @@ const Table = ({ items, deleteItem, dispatch }) => (
                     />
                 ) 
             })} 
+            <tr className="totalRow">
+                <td></td>
+                <td></td>
+                <td className="label">Total</td>
+                <td className="value">${total}</td>
+            </tr>
         </tbody>
     </table>  
 )
