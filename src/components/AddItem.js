@@ -10,7 +10,7 @@ const AddItem = ({ current, dispatch }) => {
     const { id, value } = e.target;  
     dispatch(setCurrentItem({ field: id, val: value }));
   }     
-  const { name, category, price, date } = current;
+  const { type, name, category, price, date } = current;
   
   return (
     <form 
@@ -20,14 +20,26 @@ const AddItem = ({ current, dispatch }) => {
         e.preventDefault();  
         dispatch(addItem(current));  
       }} 
+      onChange={handleUserInput} 
     >  
+      <h2>Add Transaction</h2>
+      <div>
+        <label htmlFor="name">Type</label>
+        <select 
+          id="type"
+          value={type}
+          required={true}
+        >
+          <option value="expense">Expense</option> 
+          <option value="income">Income</option> 
+        </select>
+      </div>
       <div>
         <label htmlFor="name">Item</label>
         <input 
           type="text" 
           id="name" 
-          value={name} 
-          onChange={handleUserInput}
+          value={name}  
           placeholder="Rent" 
           required={true}
         />
@@ -37,8 +49,7 @@ const AddItem = ({ current, dispatch }) => {
         <input 
           type="text" 
           id="category" 
-          value={category} 
-          onChange={handleUserInput}
+          value={category}  
           placeholder="Housing" 
           required={true}
         />
@@ -50,8 +61,7 @@ const AddItem = ({ current, dispatch }) => {
           step="0.01" 
           min="0" 
           id="price" 
-          value={price}
-          onChange={handleUserInput}
+          value={price} 
           placeholder="1000.00" 
           required={true}
         />
@@ -60,15 +70,12 @@ const AddItem = ({ current, dispatch }) => {
         <label htmlFor="date">Date</label>
         <input 
           type="date" 
-          id="date" 
-          onChange={handleUserInput}
+          id="date"  
           value={date} 
           required={true}
         /> 
       </div>
-      <button className="add" type="submit" aria-label="add item">
-        +
-      </button>
+      <button className="add" type="submit" aria-label="add item">Add</button>
     </form>
   )
 }

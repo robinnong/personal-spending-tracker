@@ -3,23 +3,22 @@ import { Button } from '@material-ui/core';
 import { Delete } from '@material-ui/icons';
 
 const Item = ({ onClick, date, name, category, price }) => (
-    <tr>
-        <td>{date}</td>
-        <td>{name}</td>
-        <td className="category">
-            <span>{category}</span>
+    <tr>  
+        <td className="itemCard">
+            <span className="date">{date}</span> 
+            <span className="name">{name}</span>
+            <div className="category">
+                <span>{category}</span>
+            </div>
+        </td>  
+        <td className="price">
+            {price < 0 ? "- " : " "}
+            ${Math.abs(price)}
         </td>
-        <td className="price">${price}</td>
         <td>
-            <Button 
-            variant="outlined" 
-            size="small" 
-            color="secondary"
-            aria-label="Delete item" 
-            onClick={onClick} 
-            startIcon={<Delete />}> 
-                Delete
-            </Button>
+            <button aria-label="Delete item" onClick={onClick}> 
+                <Delete />
+            </button>
         </td>
     </tr> 
 )

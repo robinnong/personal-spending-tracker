@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { setFilter } from '../redux/actions'; 
+import { setFilter, sortColumn } from '../redux/actions'; 
 import SelectFilter from '../components/SelectFilter';
 
 const getCategories = (state) => { 
@@ -12,7 +12,8 @@ const mapStateToProps = (state) => ({
 }) 
 
 const mapDispatchToProps = (dispatch) => ({
-  handleChange: (selection) => dispatch(setFilter(selection))
+  filter: (selection) => dispatch(setFilter(selection)),
+  sort: (selection) => dispatch(sortColumn(selection)),
 }) 
 
 export default connect(mapStateToProps, mapDispatchToProps)(SelectFilter)

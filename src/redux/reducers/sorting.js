@@ -1,4 +1,4 @@
- const sorting = (state = {column: "date", direction: true}, action) => {
+ const sorting = (state = {column: "date", direction: false}, action) => {
 
   switch (action.type) {
     case 'SORT_COLUMN':  

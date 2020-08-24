@@ -15,6 +15,7 @@ li,
 h1,
 h2,
 h3,
+fieldset,
 input, 
 button, 
 p {
@@ -38,78 +39,94 @@ a {
   transition: all 0.3s; 
 } 
 
+button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none; 
+}
+
 table, th, td,
 select, option { text-transform: capitalize; }
 
 body {
-  background-color: #1a1d35; 
+  padding: 50px 0;
+  background-color: #ffffff; 
   font-size: 1.6rem; 
-  color: #dadada;
+  color: #1d1d1d;
   min-width: 320px;
   font-family: 'Open Sans', sans-serif;
 }
 
 header {
-  height: 70px;
-  background-color: #020203; 
+  height: 70px; 
   display: flex;
   align-items: center;
-  margin-bottom: 16px;
-  color: #FFF;
+  justify-content: center; 
+  color: #FFF; 
 } 
 
-h1 {
-  margin-left: 16px; 
+.wrapper {
+  margin: 0 auto;
+  width: 80%;
+  max-width: 800px;
+}
+
+h1, h2 { 
   font-size: 2rem;
   letter-spacing: 0.1rem;
-}
+}  
 
-main {  
-  padding: 50px;
-} 
-
-section, table {
-  margin: 0 auto;
-}
-
-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
+main {
+  display: flex;   
+}  
 
 /* Item Input Form Styles */
-input, select {
+input, select, fieldset {
   font-family: inherit;
   border-radius: 5px;
   border: 1px solid transparent;
   width: 180px; 
   font-family: inherit;
   color: inherit;
-  background-color: #2d293f; 
+  background-color: #ebebeb; 
 } 
 
 input, select { padding: 10px; }
 
 input:focus { border: 1px solid #ffffff; }
 
-.inputForm {
-  margin-top: 50px;
+.inputForm {  
   display: flex;
-  align-items: center;
-  margin-bottom: 20px;
+  flex-direction: column;  
+  max-height: 550px;
+  width: 40%;
+  margin-right: 20px;   
+  padding: 30px;
+  background-color:#eeeeee; ;
+}
+
+.inputForm + div {
+  width: calc(60% - 20px); 
+}
+
+.inputForm input,
+.inputForm select { 
+  background-color: #dddddd;
+  width: 100%;
 }
 
 .inputForm div {
   margin-right: 20px;
-  position: relative;
+  position: relative; 
+  margin-bottom: 30px; 
+  overflow-y: auto;
 }
 
-.inputForm label {
+.inputForm h2 {margin-bottom: 50px;}
+
+label {
   position: absolute;
-  top: -20px;
-  color: #ebebeb;
+  top: -20px; 
   font-size: inherit;
   font-size: 1.4rem;
   font-family: inherit;
@@ -124,47 +141,42 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-/* Filter by Category */
-.filterSelect label {margin-right: 10px;}
- 
-select {   
-  cursor: pointer;
-  margin-top: 20px;
-} 
+
+/* Filter by Category */ 
+.visiblilityFilters { 
+  display: flex;
+  margin-top: 50px;
+}
+.filterSelect {margin-bottom: 10px;}
+.filterSelect label {margin-right: 10px;} 
+
+fieldset {
+  position: relative;
+  display: inline-block;
+  margin-right: 30px;
+}
+
+select { cursor: pointer; } 
 
 .add {
-  background-color: #ff82a7;
+  background-color: #ff8e8e;
   font-family: inherit;
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: 2.4rem; 
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
+  text-transform: uppercase;  
+  color: white;
+  padding: 10px 0;
   border: none;
   cursor: pointer;
-} 
+}  
 
-tbody tr:last-of-type {
-  border-top: 1px solid #ffffff1c;
-}
-
-.totalRow .label {
-  text-align: right;
-}
-
-.totalRow .value {
-  font-weight: 600;
-}
-
-/* Table styles */
-table { 
-  margin-top: 20px;  
+/* Table styles */ 
+table {  
+  width: 100%;
+  margin-top: 30px;  
   border-collapse: collapse;  
-  background-color: #25253d; 
-  box-shadow: 3px 3px 8px 2px rgba(0, 0, 0, 0.199);
+  box-shadow: 3px 3px 8px 2px rgba(59, 59, 59, 0.116);
   border-radius: 5px;
-  overflow: hidden;
+  background-color: white;
+  overflow: hidden; 
 }
 
 caption {
@@ -174,33 +186,75 @@ caption {
   margin-bottom: 10px;
 }
 
-th {
+th { 
   text-align: left;
   font-size: 1.4rem; 
 }
 
-th:not(:last-of-type) {
-  cursor: pointer;
-  overflow: auto;
-  min-width: 180px;
-  width: calc(100% / 5);
+th:not(:last-of-type) { 
+  overflow: auto; 
+  width: calc((100% - 50px)/ 3);
 }  
+
+th:last-of-type {
+  max-width: 50px;
+}
+
+tr:not(:first-of-type) {
+  border-top: 1px solid rgba(105, 105, 105, 0.158);
+}
 
 th, td {padding: 15px;} 
 
 .category span {
   font-size: 1.3rem;
-  background-color: #ffc2d4;
-  padding: 3px 10px;
-  border-radius: 30px;
-  color: #000000;
+  background-color: #ffb5b5;
+  margin-top: 5px;
+  display: inline-block;
+  padding: 0px 10px;
+  border-radius: 30px; 
 } 
 
-.price {font-weight: 600;}
+table button {
+  color: white;  
+}
+
+.name {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+.date {font-size: 1.4rem;}
+.price {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.itemCard {
+  display: flex;
+  flex-direction: column;
+  line-height: 2.2rem;
+}
 
 .tableHeadings { 
-  background-color: #0f0f16; 
-  color: #ff82a7;
+  background-color: #252525; 
+  color: #ff8e8e;
 } 
+ 
+.summary {
+  font-weight: 600;
+  text-align: center;  
+  padding: 20px;
+  margin-top: 10px;
+  background-color: hsl(0, 0%, 95%);
+}
 
-.placeholderRow {height: 50px;}
+.summary h2 {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  color: #f37b7b;
+}
+
+.summary span {
+  font-size: 2.2rem;  
+}

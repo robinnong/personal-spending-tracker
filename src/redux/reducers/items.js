@@ -3,8 +3,9 @@ import { SampleData } from '../../components/helpers';
 const items = (state = SampleData, action) => {
   switch (action.type) {
     case 'ADD_ITEM':
-      const item = { ...action.object }
-      item.price = parseFloat(item.price)
+      const item = { ...action.object }; 
+      const multiplier = item.type === "income" ? 1 : -1;
+      item.price = parseFloat(item.price)*multiplier;
       return [
         // makes a copy of the state and adds new object!
         ...state,
