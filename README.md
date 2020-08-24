@@ -2,7 +2,7 @@
 
 A simple income/expense tracker that I'm building to learn advanced concepts in **React and Redux**. A work in progress. This project is a continuation of another project that I completed during Juno's Web Development Bootcamp, [a framework-less spending calculator](https://github.com/robinnong/robinNongprojectThree "Personal Budget Calculator") built with JQuery.
 
-## To-do 
+## To-do 📝
 - [x] Show total balance at bottom of table
 - [x] Allow users to add income + expenses
 - [ ] Allow users to edit an expense 
