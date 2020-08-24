@@ -2,7 +2,14 @@
 
   switch (action.type) {
     case 'SORT_COLUMN':  
-      return { column: action.text, direction: !state.direction } 
+    if (action.text === "name") {
+      return { column: action.text, direction: true } 
+    } else if (action.text === "category" || action.text === "date") {
+      return { column: action.text, direction: false } 
+    } else {
+      return { column: action.text, direction: true } 
+
+    }
     default:
       return state
   }

@@ -48,9 +48,7 @@ button {
 table, th, td,
 select, option { text-transform: capitalize; }
 
-body {
-  padding: 50px 0;
-  background-color: #ffffff; 
+body {  
   font-size: 1.6rem; 
   color: #1d1d1d;
   min-width: 320px;
@@ -99,14 +97,15 @@ input:focus { border: 1px solid #ffffff; }
   display: flex;
   flex-direction: column;  
   max-height: 550px;
+  min-width: 280px;
   width: 40%;
-  margin-right: 20px;   
+  margin-right: 50px;   
   padding: 30px;
-  background-color:#eeeeee; ;
+  background-color:#eeeeee;
 }
 
 .inputForm + div {
-  width: calc(60% - 20px); 
+  width: calc(60% - 50px); 
 }
 
 .inputForm input,
@@ -173,11 +172,11 @@ table {
   width: 100%;
   margin-top: 30px;  
   border-collapse: collapse;  
-  box-shadow: 3px 3px 8px 2px rgba(59, 59, 59, 0.116);
+  box-shadow: 0px 0px 5px 2px rgba(129, 129, 129, 0.116);
   border-radius: 5px;
   background-color: white;
   overflow: hidden; 
-}
+} 
 
 caption {
   text-align: left;
