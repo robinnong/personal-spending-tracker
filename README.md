@@ -1,6 +1,6 @@
 # Personal Spending Tracker
 
-Practice project (simple personal spending tracker) for learning React and Redux. A work in progress.
+A simple income/expense tracker that I'm building to learn advanced concepts in React and Redux. A work in progress. This project is a continuation of another project that I completed during Juno's Web Development Bootcamp, <a href="https://github.com/robinnong/robinNongprojectThree">a framework-less spending calculator</a> built with JQuery.
 
 ## To-do:
 - [x] Show total balance at bottom of table
