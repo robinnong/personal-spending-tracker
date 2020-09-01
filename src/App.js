@@ -8,13 +8,12 @@ import './App.css';
 const App = () => (
   <>
     <header> 
-      <h1>Personal Spending Tracker</h1>
-    </header>
-    <main className="wrapper">   
+      <h1>Personal Spending Tracker</h1> 
+      <Balance />
       <AddItem />
+    </header>
+    <main className="wrapper">    
       <div>
-        <h2>Account Activity</h2>
-        <Balance />
         <Filter /> 
         <List /> 
       </div> 

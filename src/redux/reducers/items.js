@@ -12,7 +12,7 @@ const items = (state = SampleData, action) => {
         item 
       ]
     case 'DELETE_ITEM':
-      return [...state].filter((item) => item.id !== action.id); 
+      return [...state].filter((item) => !action.array.includes(item.id)); 
     default:
       // returns the state unchanged
       return state

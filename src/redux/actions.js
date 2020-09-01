@@ -15,9 +15,9 @@ export const addItem = object => ({
     object
 })
 
-export const deleteItem = id => ({
+export const deleteItem = array => ({
   type: DELETE_ITEM, 
-  id
+  array
 })
 
 export const setCurrentItem = object => ({

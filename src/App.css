@@ -53,82 +53,47 @@ body {
   color: #1d1d1d;
   min-width: 320px;
   font-family: 'Open Sans', sans-serif;
+  background-color: rgb(241, 241, 241);
 }
 
-header {
-  height: 70px; 
+header {   
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center; 
-  color: #FFF; 
+  background-color: white;
+  padding: 30px 20px 20px 20px; 
+  box-shadow: 5px 5px 3px 2px rgba(173, 173, 173, 0.1);
 } 
 
 .wrapper {
   margin: 0 auto;
-  width: 80%;
+  width: 90%;
   max-width: 800px;
-}
+} 
 
 h1, h2 { 
   font-size: 2rem;
-  letter-spacing: 0.1rem;
 }  
 
 main {
-  display: flex;   
+  /* display: flex;    */
 }  
 
 /* Item Input Form Styles */
-input, select, fieldset {
-  font-family: inherit;
-  border-radius: 5px;
-  border: 1px solid transparent;
-  width: 180px; 
-  font-family: inherit;
-  color: inherit;
-  background-color: #ebebeb; 
-} 
+input, select {
+  font-family: inherit; 
+  color: inherit; 
+  border: 1px solid black;  
+}  
 
-input, select { padding: 10px; }
+select { cursor: pointer; } 
 
-input:focus { border: 1px solid #ffffff; }
-
-.inputForm {  
-  display: flex;
-  flex-direction: column;  
-  max-height: 550px;
-  min-width: 280px;
-  width: 40%;
-  margin-right: 50px;   
-  padding: 30px;
-  background-color:#eeeeee;
-}
-
-.inputForm + div {
-  width: calc(60% - 50px); 
-}
-
-.inputForm input,
-.inputForm select { 
-  background-color: #dddddd;
-  width: 100%;
-}
-
-.inputForm div {
-  margin-right: 20px;
-  position: relative; 
-  margin-bottom: 30px; 
-  overflow-y: auto;
-}
-
-.inputForm h2 {margin-bottom: 50px;}
-
-label {
-  position: absolute;
-  top: -20px; 
+label {  
   font-size: inherit;
   font-size: 1.4rem;
-  font-family: inherit;
+  font-family: inherit; 
+  display: block;
+  margin-bottom: 5px;
 } 
 
 /* Hide increment arrows in Firefox */ 
@@ -141,29 +106,62 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
+.inputForm {  
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  /* flex-direction: column;   */
+  /* max-height: 550px;
+  min-width: 280px; */
+  /* width: 40%;
+  margin-right: 50px;    */ 
+  background-color:#ffffff; 
+} 
+
+.inputForm input, 
+.inputForm select {
+  padding: 10px;
+  height: 45px; 
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.inputForm div {
+  margin-right: 20px; 
+  position: relative;  
+  overflow-y: auto;
+}
+
 /* Filter by Category */ 
-.visiblilityFilters { 
+.filterSelect { 
   display: flex;
   margin-top: 50px;
+  margin-bottom: 10px;
 }
-.filterSelect {margin-bottom: 10px;}
+
 .filterSelect label {margin-right: 10px;} 
 
-fieldset {
+.filterSelect select {
+  width: 180px; 
+  padding: 5px;
+}
+
+.filterSelect > div {
   position: relative;
   display: inline-block;
   margin-right: 30px;
-}
-
-select { cursor: pointer; } 
+} 
 
 .add {
-  background-color: #ff8e8e;
+  background-color: #676aff;
   font-family: inherit;
+  font-size: 2rem;
   text-transform: uppercase;  
   color: white;
-  padding: 10px 0;
+  padding: 10px;
   border: none;
+  height: 45px;
+  margin-bottom: 10px;
   cursor: pointer;
 }  
 
@@ -187,7 +185,7 @@ caption {
 
 th { 
   text-align: left;
-  font-size: 1.4rem; 
+  font-size: 1.5rem; 
 }
 
 th:not(:last-of-type) { 
@@ -195,9 +193,9 @@ th:not(:last-of-type) {
   width: calc((100% - 50px)/ 3);
 }  
 
-th:last-of-type {
-  max-width: 50px;
-}
+th:last-of-type { 
+  max-width: 70px;
+} 
 
 tr:not(:first-of-type) {
   border-top: 1px solid rgba(105, 105, 105, 0.158);
@@ -236,24 +234,41 @@ table button {
 
 .tableHeadings { 
   background-color: #252525; 
-  color: #ff8e8e;
+  color: #8c8eff;
 } 
  
 .summary {
   font-weight: 600;
   text-align: center;  
   padding: 20px;
-  margin-top: 10px;
-  background-color: hsl(0, 0%, 95%);
+  margin-top: 10px; 
 }
 
 .summary h2 {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   text-transform: uppercase;
-  margin-bottom: 10px;
-  color: #f37b7b;
+  margin-bottom: 5px;
 }
 
 .summary span {
-  font-size: 2.2rem;  
+  color: #676aff;
+  font-size: 2.4rem;  
+}
+
+.checkbox {
+  height: 20px;
+  width: 20px; 
+  border: 1px solid grey;
+  color: black;
+  margin: 0 auto;
+  display: block;
+} 
+
+.deleteButton { 
+  background-color: rgb(255, 94, 94); 
+  color: black;
+  padding: 4px 8px;
+  border-radius: 5px;
+  margin: 0 auto;
+  display: block;
 }
