@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f6c67d05da2a63da6f904aa4aca49d9d",
+    "revision": "1c94248610a5f3cc53d44c780af90319",
     "url": "/personal-spending-tracker/index.html"
   },
   {
-    "revision": "b6bcd6f38b9ebf793af8",
-    "url": "/personal-spending-tracker/static/css/main.9d302fc9.chunk.css"
+    "revision": "7ef9f9340c6fd592e2ed",
+    "url": "/personal-spending-tracker/static/css/main.6d370354.chunk.css"
   },
   {
     "revision": "4d7cc24357da3deb83be",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/personal-spending-tracker/static/js/2.45509f1c.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b6bcd6f38b9ebf793af8",
-    "url": "/personal-spending-tracker/static/js/main.a5bddb94.chunk.js"
+    "revision": "7ef9f9340c6fd592e2ed",
+    "url": "/personal-spending-tracker/static/js/main.41f8e6aa.chunk.js"
   },
   {
     "revision": "a00ddfc9e02f6a3f6ffd",
