@@ -1,5 +1,6 @@
 import React from 'react';  
 import { connect } from 'react-redux';
+import { Categories } from './helpers';
 import { addItem, setCurrentItem } from '../redux/actions';  
 
 const mapStateToProps = (state) => ({ current: state.currentItem });
@@ -45,16 +46,22 @@ const AddItem = ({ current, dispatch }) => {
             required={true}
           />
         </div>
-        <div>
+
+        <div> 
           <label htmlFor="category">Category</label>
-          <input 
-            type="text" 
+          <select
             id="category" 
-            value={category}  
-            placeholder="Housing" 
+            value={type}
             required={true}
-          />
-        </div>
+          >
+            {Categories.map((category, index)=> {
+              return (
+                <option key={index} value={category}>{category}</option>
+              )
+            })} 
+          </select>
+        </div> 
+
         <div>
           <label htmlFor="price">Price</label>
           <input 

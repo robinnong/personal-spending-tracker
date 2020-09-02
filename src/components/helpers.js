@@ -4,7 +4,7 @@ export const SampleData = [
         id: 0,
         date: '2019-11-02',
         name: 'groceries',
-        category: 'food',
+        category: 'groceries',
         price: -200.00,
     },
     {   
@@ -24,6 +24,20 @@ export const SampleData = [
         price: -9.99,
     }
 ] 
+
+export const Categories = [ 
+    'dining',
+    'entertaining',
+    'fitness',
+    'groceries',
+    'housing',
+    'income',
+    'misc.',
+    'personal hygeine',
+    'shopping',
+    'subscriptions',
+    'utilities',
+]
 
 export const Months = [
     '',

@@ -17,7 +17,8 @@ const Table = ({ items, deleteItem }) => {
     return (
         <table> 
             <thead> 
-                <tr className="tableHeadings">  
+                <tr>  
+                    <th></th>
                     <th>Item </th> 
                     <th>Total</th>
                     <th>

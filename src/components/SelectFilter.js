@@ -1,4 +1,5 @@
 import React from 'react'; 
+import { Categories } from './helpers';
 
 const SelectFilter = ({ categories, sort, filter }) => ( 
   <form action="" className="filterSelect">
@@ -10,13 +11,11 @@ const SelectFilter = ({ categories, sort, filter }) => (
         onChange={(e) => filter(e.target.value)} 
       >
         <option value="">All</option>
-        {categories.map((category, index) => {
+        {Categories.map((category, index) => {
           return (
-            <option key={index} value={category}>
-              {category}
-            </option>
+            <option key={index} value={category}>{category}</option>
           )
-        })}
+        })} 
       </select>
     </div>
     
