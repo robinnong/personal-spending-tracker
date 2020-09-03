@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/personal-spending-tracker/precache-manifest.987549ffce8cf41955999d374b669819.js"
+  "/personal-spending-tracker/precache-manifest.6350139fb8f7d0b844c637deddf442c4.js"
 );
 
 self.addEventListener('message', (event) => {
