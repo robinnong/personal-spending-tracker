@@ -1,8 +1,9 @@
 import React, { useState } from 'react'; 
 import { connect } from 'react-redux';
 import Item from './Item'; 
+import { TableStyle } from './styles';
 
-const Table = ({ items, deleteItem }) => {
+const Table = ({ darkMode, items, deleteItem }) => {
     const [selected, setSelected] = useState([]);
 
     // Removes or adds selection
@@ -15,7 +16,7 @@ const Table = ({ items, deleteItem }) => {
     }
 
     return (
-        <table> 
+        <TableStyle darkMode={darkMode}> 
             <thead> 
                 <tr>  
                     <th></th>
@@ -43,7 +44,7 @@ const Table = ({ items, deleteItem }) => {
                     ) 
                 })}  
             </tbody>
-        </table>  
+        </TableStyle>  
     )
 }
 

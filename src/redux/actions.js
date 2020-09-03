@@ -7,6 +7,7 @@ const DELETE_ITEM = 'DELETE_ITEM'
 const SET_CURRENT_ITEM = 'SET_CURRENT_ITEM'
 const SET_FILTER = 'SET_FILTER'
 const SORT_COLUMN = 'SORT_COLUMN'
+const SET_DARK_MODE = 'SET_DARK_MODE'
 
 // Action creators
 export const addItem = object => ({ 
@@ -33,4 +34,9 @@ export const sortColumn = text => ({
 export const setFilter = text => ({
   type: SET_FILTER, 
   text
+})
+
+export const setDarkMode = bool => ({
+  type: SET_DARK_MODE,
+  bool
 })

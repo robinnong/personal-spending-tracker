@@ -1,8 +1,12 @@
 import React from 'react'; 
 import { Categories } from './helpers';
+import { VisibilityFilters } from './styles';
 
-const SelectFilter = ({ sort, filter }) => ( 
-  <form action="" className="filterSelect">
+const SelectFilter = ({ darkMode, sort, filter }) => ( 
+  <VisibilityFilters 
+    action="" 
+    darkMode={darkMode}
+  >
     <div>
       <label htmlFor="filter">Show</label>
       <select 
@@ -31,7 +35,7 @@ const SelectFilter = ({ sort, filter }) => (
         <option value="price">Highest to Lowest</option>
       </select>
     </div>
-  </form> 
+  </VisibilityFilters> 
 ) 
 
 export default SelectFilter

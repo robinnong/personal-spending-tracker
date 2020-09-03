@@ -2,10 +2,14 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Categories } from './helpers';
 import { addItem, setCurrentItem } from '../redux/actions';  
+import { Form } from './styles';
 
-const mapStateToProps = (state) => ({ current: state.currentItem });
+const mapStateToProps = (state) => ({ 
+  current: state.currentItem,
+  darkMode: state.darkMode
+});
 
-const AddItem = ({ current, dispatch }) => { 
+const AddItem = ({ darkMode, current, dispatch }) => { 
    // Keeps track of user's input, saving the input to its corresponding property in the list item object
   const handleUserInput = (e) => {
     const { id, value } = e.target;  
@@ -16,9 +20,10 @@ const AddItem = ({ current, dispatch }) => {
   return (
     <div>
       <h2>Add Transaction</h2>
-      <form 
+      <Form 
         action="" 
         className="inputForm" 
+        darkMode={darkMode}
         onSubmit={(e) => {
           e.preventDefault();  
           dispatch(addItem(current));  
@@ -84,7 +89,7 @@ const AddItem = ({ current, dispatch }) => {
             /> 
         </div>
         <button className="add" type="submit" aria-label="add item">+</button>
-      </form>
+      </Form>
     </div>
   )
 }

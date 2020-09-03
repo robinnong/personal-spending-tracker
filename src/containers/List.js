@@ -23,7 +23,8 @@ const getList = (items, filter, sort) => {
 }
 
 const mapStateToProps = state => ({
-  items: getList(state.items, state.filterBy, state.sorting) 
+  items: getList(state.items, state.filterBy, state.sorting),
+  darkMode: state.darkMode 
 })
 
 const mapDispatchToProps = dispatch => ({
