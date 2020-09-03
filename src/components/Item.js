@@ -1,46 +1,33 @@
 import React, { useState, useEffect } from 'react';   
-import CheckIcon from '@material-ui/icons/Check';
+import CheckIcon from '@material-ui/icons/Check'; 
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
-import MovieIcon from '@material-ui/icons/Movie';
-import HomeIcon from '@material-ui/icons/Home';
-import LiveTvIcon from '@material-ui/icons/LiveTv';
-import LocalGroceryStoreIcon from '@material-ui/icons/LocalGroceryStore';
-import LocalDiningIcon from '@material-ui/icons/LocalDining';
+import { Categories, Months } from './helpers'; 
 
 const Item = ({ onClick, date, name, category, price }) => { 
     const [checked, isChecked] = useState(false);
-    const [icon, setIcon] = useState(<AttachMoneyIcon/>); 
-    
-    useEffect(()=> {
-        switch(category) {
-            case 'dining':
-                setIcon(<LocalDiningIcon />)
-                break;
-            case 'entertainment':
-                setIcon(<MovieIcon />)
-                break;
-            case 'groceries':
-                setIcon(<LocalGroceryStoreIcon />)
-                break;
-            case 'housing':
-                setIcon(<HomeIcon />)
-                break;
-            case 'subscriptions':
-                setIcon(<LiveTvIcon />)
-                break;
-            default: 
-                setIcon(<AttachMoneyIcon />)
-        }
-    },[])
+    const [icon, setIcon] = useState(<AttachMoneyIcon />);
+    const [newDate, setDate] = useState(date);
 
+    useEffect(()=>{ 
+        const type = Categories.find(item => item.category === category)
+        setIcon(type.icon) 
+ 
+        const month = Months[date.substring(5, 7)];
+        const day = date.substring(8,10);
+        const year = date.substring(0,4); 
+        setDate(`${month} ${day}, ${year}`)
+    },[])
+    
     return (
         <tr>  
             <td className="category">
-                <div className="categoryIcon">{icon}</div>
+                <div className="categoryIcon">
+                    {icon}
+                </div>
             </td>
             <td className="itemCard">
                 <span className="name">{name}</span> 
-                <span className="date">{date}</span> 
+                <span className="date">{newDate}</span> 
             </td>  
             <td className="price">
                 {price < 0 ? "- " : " "}

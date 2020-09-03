@@ -22,10 +22,13 @@ const Table = ({ items, deleteItem }) => {
                     <th>Item </th> 
                     <th>Total</th>
                     <th>
-                        {selected.length > 0 
-                            ? <button className="deleteButton" onClick={() => deleteItem(selected)}>Delete</button>
-                            : null 
-                        }
+                        <button 
+                            className={selected.length > 0 ? "deleteButton" : "hidden deleteButton"}
+                            onClick={() => deleteItem(selected)}>
+                                Delete
+                        </button>
+
+
                     </th>
                 </tr>
             </thead>

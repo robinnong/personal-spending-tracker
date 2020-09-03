@@ -1,3 +1,16 @@
+import React from 'react';
+import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
+import MovieIcon from '@material-ui/icons/Movie';
+import HomeIcon from '@material-ui/icons/Home';
+import LiveTvIcon from '@material-ui/icons/LiveTv';
+import LocalGroceryStoreIcon from '@material-ui/icons/LocalGroceryStore';
+import BuildIcon from '@material-ui/icons/Build';
+import LocalMallIcon from '@material-ui/icons/LocalMall';
+import WorkIcon from '@material-ui/icons/Work';
+import FitnessCenterIcon from '@material-ui/icons/FitnessCenter';
+import LocalDiningIcon from '@material-ui/icons/LocalDining';
+
+
 export const SampleData = [
     {
         type: "expense",
@@ -26,17 +39,46 @@ export const SampleData = [
 ] 
 
 export const Categories = [ 
-    'dining',
-    'entertaining',
-    'fitness',
-    'groceries',
-    'housing',
-    'income',
-    'misc.',
-    'personal hygeine',
-    'shopping',
-    'subscriptions',
-    'utilities',
+    { 
+        category: 'dining',
+        icon: <LocalDiningIcon />
+    },
+    {
+        category: 'entertainment',
+        icon: <LiveTvIcon />
+    }, 
+    {
+        category: 'groceries',
+        icon: <LocalGroceryStoreIcon />
+    },
+    {
+        category: 'health',
+        icon: <FitnessCenterIcon />
+    },
+    {
+        category: 'housing',
+        icon: <HomeIcon />
+    },
+    {
+        category: 'income',
+        icon: <WorkIcon />
+    },
+    {
+        category: 'misc.',
+        icon: <AttachMoneyIcon />
+    }, 
+    {
+        category: 'shopping',
+        icon: <LocalMallIcon />
+    },
+    {
+        category: 'subscriptions',
+        icon: <MovieIcon />
+    },
+    {
+        category: 'utilities',
+        icon: <BuildIcon />
+    }
 ]
 
 export const Months = [

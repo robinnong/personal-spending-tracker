@@ -11,7 +11,7 @@ const AddItem = ({ current, dispatch }) => {
     const { id, value } = e.target;  
     dispatch(setCurrentItem({ field: id, val: value }));
   }     
-  const { type, name, category, price, date } = current;
+  const { type, name, price, date } = current;
   
   return (
     <div>
@@ -56,7 +56,7 @@ const AddItem = ({ current, dispatch }) => {
           >
             {Categories.map((category, index)=> {
               return (
-                <option key={index} value={category}>{category}</option>
+                <option key={index} value={category.category}>{category.category}</option>
               )
             })} 
           </select>
