@@ -60,7 +60,7 @@ export const Categories = [
         icon: <HomeIcon />
     },
     {
-        category: 'income',
+        category: 'earnings',
         icon: <WorkIcon />
     },
     {

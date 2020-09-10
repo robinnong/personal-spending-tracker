@@ -15,6 +15,7 @@ export const Body = styled.div`
 `
 
 export const Header = styled.header`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,7 +31,7 @@ export const Header = styled.header`
 
 export const TableStyle = styled.table`
   width: 100%;
-  margin-top: 30px;  
+  margin-top: 20px;  
   border-collapse: collapse;  
   border-radius: 5px;
   overflow: hidden; 
@@ -69,19 +70,27 @@ export const TableStyle = styled.table`
 export const Form = styled.form`
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-end;   
-
+  align-items: flex-end;  
+  margin-top: 10px;
+  max-height: ${props => (props.visible
+    ? "500px" 
+    : "0")};
+  overflow: ${props => (props.visible
+      ? "none"
+      : "hidden")};
+  transition: max-height 0.4s linear;
+  
   input, select {
     padding: 10px;
     height: 45px; 
     margin-bottom: 10px;
     width: 100%;
     background-color:  ${props => (props.darkMode
-    ? "#4d4d4d"
-    : "#f1f2fa")};  
+      ? "#4d4d4d"
+      : "#f1f2fa")};  
     color:  ${props => (props.darkMode
-    ? "#cfcfcf"
-    : "#6e6d86")};  
+      ? "#cfcfcf"
+      : "#6e6d86")};  
     transition: all 0.3s;
   }
 
@@ -93,28 +102,25 @@ export const Form = styled.form`
 `
 
 export const VisibilityFilters = styled.form` 
-  display: flex;
-  margin-top: 50px;
-  margin-bottom: 10px;
-
   label {margin-right: 10px;} 
 
   select {
-    background-color: ${props => (props.darkMode
-    ? "#363636"
-    : "white")};   
+    background-color: transparent;
     color: ${props => (props.darkMode
     ? "#cfcfcf"
     : "#6e6d86")}; 
-    width: 180px; 
+    border-bottom: ${props => (props.darkMode
+    ? "1px solid white"
+    : "1px solid black")}; 
+    width: 180px;  
     padding: 5px; 
     transition: all 0.3s;
-  }
+  } 
   
   & > div {
     position: relative;
     display: inline-block;
-    margin-right: 30px;
+    margin-left: 30px;
   }
 `
 
@@ -123,7 +129,7 @@ export const Toggle = styled.button`
   height: 30px;
   width: 62px;
   background-color: #252525;
-  border: none; 
+  border: 1px solid white; 
   border-radius: 25px;  
   color: white;
   display: flex;
@@ -132,18 +138,32 @@ export const Toggle = styled.button`
   padding: 0 9px;
   
   svg {
-    transform: scale(1.3);
+    transform: scale(1.2);
   }
-
+  
   &::after {
     content: '';
     height: 20px;
     width: 20px; 
     background-color: grey;
     border-radius: 50%; 
-    position: absolute;
-    top: 5px; 
-    right: 6px;
+    position: absolute; 
+    right: 5px;
     transition: all 0.2s;
   }
-` 
+  ` 
+
+export const Button = styled.button`
+  text-transform: uppercase;
+  background-color: #676aff; 
+  border-radius: 5px;
+  color: white;
+  padding: 5px 15px;
+  font-weight: 300;
+  margin-right: 20px;
+  font-size: 1.4rem;
+  transition: all 0.3s;
+
+  &:hover,
+  &:focus { background-color: #8c8fff; }
+`

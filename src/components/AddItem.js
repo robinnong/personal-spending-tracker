@@ -1,8 +1,10 @@
-import React from 'react';  
+import React, { useState } from 'react';  
 import { connect } from 'react-redux';
 import { Categories } from './helpers';
 import { addItem, setCurrentItem } from '../redux/actions';  
 import { Form } from './styles';
+import ExpandLessIcon from '@material-ui/icons/ExpandLess';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const mapStateToProps = (state) => ({ 
   current: state.currentItem,
@@ -10,19 +12,21 @@ const mapStateToProps = (state) => ({
 });
 
 const AddItem = ({ darkMode, current, dispatch }) => { 
+  const [isVisible, setVisibility] = useState(true);
    // Keeps track of user's input, saving the input to its corresponding property in the list item object
   const handleUserInput = (e) => {
     const { id, value } = e.target;  
     dispatch(setCurrentItem({ field: id, val: value }));
-  }     
+  }      
+
   const { type, name, price, date } = current;
   
   return (
     <div>
       <h2>Add Transaction</h2>
       <Form 
-        action="" 
-        className="inputForm" 
+        action=""  
+        visible={isVisible}
         darkMode={darkMode}
         onSubmit={(e) => {
           e.preventDefault();  
@@ -90,6 +94,20 @@ const AddItem = ({ darkMode, current, dispatch }) => {
         </div>
         <button className="add" type="submit" aria-label="add item">+</button>
       </Form>
+      <button className="hide" onClick={() => setVisibility(!isVisible)}>
+        {isVisible 
+          ? 
+          <>
+            <span>Hide</span>
+            <ExpandLessIcon /> 
+          </>
+          : 
+          <>
+            <span>Show</span>
+            <ExpandMoreIcon />
+          </>
+          }
+      </button>
     </div>
   )
 }
