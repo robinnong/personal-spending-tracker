@@ -34,15 +34,21 @@ const Table = ({ darkMode, items, deleteItem }) => {
                 </tr>
             </thead>
             <tbody>  
-                {items.map((item) => { 
-                    return (
-                        <Item 
-                            key={item.id}
-                            {...item} 
-                            onClick={() => addSelected(item.id)}
-                        />
-                    ) 
-                })}  
+                {items.length > 0 
+                    ? items.map((item) => { 
+                        return (
+                            <Item 
+                                key={item.id}
+                                {...item} 
+                                onClick={() => addSelected(item.id)}
+                            />
+                        ) 
+                    })
+                    : <tr>
+                        <td></td>
+                        <td>No results to show</td>
+                      </tr>
+                } 
             </tbody>
         </TableStyle>  
     )

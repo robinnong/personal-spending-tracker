@@ -35,6 +35,22 @@ export const SampleData = [
         name: 'spotify',
         category: 'subscriptions',
         price: -9.99,
+    },
+    {
+        type: "expense",
+        id: 3,
+        date: '2019-10-23',
+        name: 'birthday dinner',
+        category: 'dining',
+        price: -39.53,
+    },
+    {
+        type: "expense",
+        id: 4,
+        date: '2019-10-22',
+        name: 'spotify',
+        category: 'subscriptions',
+        price: -9.99,
     }
 ] 
 
@@ -83,16 +99,16 @@ export const Categories = [
 
 export const Months = [
     '',
-    'Jan',
-    'Feb',
-    'Mar',
-    'Apr',
+    'January',
+    'February',
+    'March',
+    'April',
     'May',
-    'Jun',
-    'Jul',
-    'Aug',
-    'Sep',
-    'Oct',
-    'Nov',
-    'Dec'
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December'
 ]

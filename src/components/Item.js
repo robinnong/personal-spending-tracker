@@ -15,7 +15,7 @@ const Item = ({ onClick, date, name, category, price }) => {
         const month = Months[date.substring(5, 7)];
         const day = date.substring(8,10);
         const year = date.substring(0,4); 
-        setDate(`${month} ${day}, ${year}`)
+        setDate(`${day} ${month}`)
     },[])
     
     return (

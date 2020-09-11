@@ -19,7 +19,7 @@ export const Header = styled.header`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 30px 20px 20px 20px; 
+  padding: 30px 20px 0 20px; 
   transition: all 0.3s;
   background-color: ${props => (props.darkMode
     ? "#363636" 
@@ -72,12 +72,13 @@ export const Form = styled.form`
   flex-wrap: wrap;
   align-items: flex-end;  
   margin-top: 10px;
+  padding: 10px 0;
   max-height: ${props => (props.visible
     ? "500px" 
     : "0")};
   overflow: ${props => (props.visible
       ? "none"
-      : "hidden")};
+      : "hidden")}; 
   transition: max-height 0.4s linear;
   
   input, select {
@@ -94,6 +95,8 @@ export const Form = styled.form`
     transition: all 0.3s;
   }
 
+  label {margin-top: 10px;}
+
   div {
     margin-right: 20px; 
     position: relative;  
@@ -102,7 +105,10 @@ export const Form = styled.form`
 `
 
 export const VisibilityFilters = styled.form` 
-  label {margin-right: 10px;} 
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 50px;  
 
   select {
     background-color: transparent;
@@ -115,12 +121,11 @@ export const VisibilityFilters = styled.form`
     width: 180px;  
     padding: 5px; 
     transition: all 0.3s;
-  } 
+  }  
   
-  & > div {
+  .field {
     position: relative;
     display: inline-block;
-    margin-left: 30px;
   }
 `
 

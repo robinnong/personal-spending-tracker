@@ -22,8 +22,7 @@ const AddItem = ({ darkMode, current, dispatch }) => {
   const { type, name, price, date } = current;
   
   return (
-    <div>
-      <h2>Add Transaction</h2>
+    <div> 
       <Form 
         action=""  
         visible={isVisible}
