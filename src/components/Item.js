@@ -1,21 +1,15 @@
 import React, { useState, useEffect } from 'react';   
 import CheckIcon from '@material-ui/icons/Check'; 
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
-import { Categories, Months } from './helpers'; 
+import { Categories } from './helpers'; 
 
-const Item = ({ onClick, date, name, category, price }) => { 
+const Item = ({ onClick, dateString, name, category, price }) => { 
     const [checked, isChecked] = useState(false);
-    const [icon, setIcon] = useState(<AttachMoneyIcon />);
-    const [newDate, setDate] = useState(date);
+    const [icon, setIcon] = useState(<AttachMoneyIcon />); 
 
     useEffect(()=>{ 
         const type = Categories.find(item => item.category === category)
         setIcon(type.icon) 
- 
-        const month = Months[date.substring(5, 7)];
-        const day = date.substring(8,10);
-        const year = date.substring(0,4); 
-        setDate(`${day} ${month}`)
     },[])
     
     return (
@@ -27,7 +21,7 @@ const Item = ({ onClick, date, name, category, price }) => {
             </td>
             <td className="itemCard">
                 <span className="name">{name}</span> 
-                <span className="date">{newDate}</span> 
+                <span className="date">{dateString}</span> 
             </td>  
             <td className="price">
                 {price < 0 ? "- " : " "}

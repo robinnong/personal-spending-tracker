@@ -1,12 +1,12 @@
 import { connect } from 'react-redux';
-import { setFilter, sortColumn } from '../redux/actions'; 
+import { setFilter, sortColumn, setDate } from '../redux/actions'; 
 import SelectFilter from '../components/SelectFilter'; 
 
 const getDateRanges = (state) => {
   const dates = state.items.map(item => item.date.slice(0, 7));
   const unique = dates.filter((num, i) => dates.indexOf(num) === i);  
   const ranges = unique.map(date => {
-    const month = date.slice(5,7);
+    const month = parseInt(date.slice(5,7));
     const year = date.slice(0,4);
     return (
       {
@@ -25,8 +25,9 @@ const mapStateToProps = (state) => ({
 }) 
 
 const mapDispatchToProps = (dispatch) => ({
-  filter: (selection) => dispatch(setFilter(selection)),
-  sort: (selection) => dispatch(sortColumn(selection)),
+  filter: selection => dispatch(setFilter(selection)),
+  sort: selection => dispatch(sortColumn(selection)),
+  setDate: date => dispatch(setDate(date))
 }) 
 
 export default connect(mapStateToProps, mapDispatchToProps)(SelectFilter)

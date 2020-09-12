@@ -63,10 +63,35 @@ h1, h2 {
 input, select {
   font-family: inherit; 
   color: inherit;  
-  border: none;
+  border: none;  
 }  
 
-select { cursor: pointer; } 
+select { 
+  cursor: pointer;   
+  min-width: 150px; 
+  /* for Firefox */ 
+  -moz-appearance: none; 
+  /* for Safari, Chrome, Opera */ 
+  -webkit-appearance: none;  
+} 
+
+select::-ms-expand { 
+  display: none; 
+} 
+
+select + svg,
+input + svg {
+  position: absolute;
+  bottom: 25px;
+  right: 10px;
+  pointer-events: none; 
+}
+
+select + svg {
+  transform: scale(1.5); 
+}  
+
+select:focus + svg { transform: rotate(180deg) scale(1.5); }
 
 label {  
   font-size: inherit;
@@ -127,7 +152,7 @@ input::-webkit-inner-spin-button {
 h4 {
   font-size: 2.2rem;
   font-weight: 600; 
-} 
+}  
 
 .category { width: 50px; }
 
@@ -157,7 +182,7 @@ h4 {
 
 .price {
   font-size: 1.8rem;
-  font-weight: 600;
+  font-weight: 600; 
 }
 
 .itemCard {

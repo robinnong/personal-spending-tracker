@@ -5,6 +5,7 @@ import { addItem, setCurrentItem } from '../redux/actions';
 import { Form } from './styles';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import CalendarTodayIcon from '@material-ui/icons/CalendarToday';
 
 const mapStateToProps = (state) => ({ 
   current: state.currentItem,
@@ -16,11 +17,10 @@ const AddItem = ({ darkMode, current, dispatch }) => {
    // Keeps track of user's input, saving the input to its corresponding property in the list item object
   const handleUserInput = (e) => {
     const { id, value } = e.target;  
-    dispatch(setCurrentItem({ field: id, val: value }));
+    dispatch(setCurrentItem({ field: id, val: value })); 
   }      
 
   const { type, name, price, date } = current;
-  
   return (
     <div> 
       <Form 
@@ -43,6 +43,7 @@ const AddItem = ({ darkMode, current, dispatch }) => {
             <option value="expense">Expense</option> 
             <option value="income">Income</option> 
           </select>
+          <ExpandMoreIcon />
         </div>
         <div>
           <label htmlFor="name">Item</label>
@@ -52,7 +53,7 @@ const AddItem = ({ darkMode, current, dispatch }) => {
             value={name}  
             placeholder="Rent" 
             required={true}
-          />
+          /> 
         </div>
 
         <div> 
@@ -68,6 +69,7 @@ const AddItem = ({ darkMode, current, dispatch }) => {
               )
             })} 
           </select>
+          <ExpandMoreIcon />
         </div> 
 
         <div>
@@ -80,7 +82,7 @@ const AddItem = ({ darkMode, current, dispatch }) => {
             value={price} 
             placeholder="1000.00" 
             required={true}
-            />
+          /> 
         </div> 
         <div>
           <label htmlFor="date">Date</label>
@@ -89,7 +91,8 @@ const AddItem = ({ darkMode, current, dispatch }) => {
             id="date"  
             value={date} 
             required={true}
-            /> 
+          /> 
+          <CalendarTodayIcon />
         </div>
         <button className="add" type="submit" aria-label="add item">+</button>
       </Form>

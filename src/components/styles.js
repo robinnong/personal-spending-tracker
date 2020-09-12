@@ -84,8 +84,8 @@ export const Form = styled.form`
   input, select {
     padding: 10px;
     height: 45px; 
-    margin-bottom: 10px;
-    width: 100%;
+    margin-bottom: 10px; 
+    max-width: 200px;
     background-color:  ${props => (props.darkMode
       ? "#4d4d4d"
       : "#f1f2fa")};  
@@ -93,7 +93,7 @@ export const Form = styled.form`
       ? "#cfcfcf"
       : "#6e6d86")};  
     transition: all 0.3s;
-  }
+  } 
 
   label {margin-top: 10px;}
 
@@ -111,16 +111,33 @@ export const VisibilityFilters = styled.form`
   margin-top: 50px;  
 
   select {
-    background-color: transparent;
-    color: ${props => (props.darkMode
-    ? "#cfcfcf"
-    : "#6e6d86")}; 
-    border-bottom: ${props => (props.darkMode
-    ? "1px solid white"
-    : "1px solid black")}; 
-    width: 180px;  
-    padding: 5px; 
     transition: all 0.3s;
+    color: ${props => (props.darkMode
+      ? "#cfcfcf"
+      : "#6e6d86")}; 
+    background-color: ${props => (props.darkMode
+      ? "#4d4d4d"
+      : "white")}; 
+    padding: 5px; 
+  }
+
+  select + svg { 
+    bottom: 7px; 
+  }
+
+  div:nth-of-type(2) {margin-left: 20px;}
+    
+  select:nth-of-type(2) {
+    width: 180px;    
+  }  
+
+  .dateRange {
+    background-color: transparent;
+    font-size: 2rem;  
+    width: 200px;
+    border-bottom: ${props => (props.darkMode
+      ? "1px solid white"
+      : "1px solid black")};  
   }  
   
   .field {

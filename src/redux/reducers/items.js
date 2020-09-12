@@ -1,4 +1,4 @@
-import { SampleData } from '../../components/helpers';
+import { SampleData, Months } from '../../components/helpers'; 
 
 const items = (state = SampleData, action) => {
   switch (action.type) {
@@ -6,6 +6,11 @@ const items = (state = SampleData, action) => {
       const item = { ...action.object }; 
       const multiplier = item.type === "income" ? 1 : -1;
       item.price = parseFloat(item.price)*multiplier;
+
+      const index = parseInt(item.date.substring(5, 7));
+      const month = Months[index];
+      const day = item.date.substring(8, 10);  
+      item.dateString = `${day} ${month}` 
       return [
         // makes a copy of the state and adds new object!
         ...state,

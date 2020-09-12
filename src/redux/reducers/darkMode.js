@@ -1,4 +1,4 @@
-const filterBy = (state = false, action) => {
+const darkMode = (state = false, action) => {
   switch (action.type) {
     case 'SET_DARK_MODE':
       return !state
@@ -7,4 +7,4 @@ const filterBy = (state = false, action) => {
   }
 }
 
-export default filterBy
+export default darkMode

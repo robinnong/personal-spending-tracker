@@ -10,10 +10,11 @@ A simple income/expense tracker that I'm building to learn advanced concepts in 
 - [x] Format date to Month Day, Year format 
 - [x] Dark mode / light mode toggle
 - [x] Refactor CSS Variables to Styled Component props
-- [ ] Show by date range (last month, last 3 months, etc.) 
+- [x] Show by date range
 - [ ] Allow users to edit an expense 
 - [ ] Allow users to add multiple accounts
 - [ ] Responsive layout
 - [ ] Accessibility check
 - [ ] Subtle transition animations (adding and deleting)
 - [ ] Authentication and Firebase storage  
+- [ ] Display spending insights with a charting library  

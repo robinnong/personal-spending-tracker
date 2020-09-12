@@ -2,22 +2,29 @@ import React from 'react';
 import { Categories } from './helpers';
 import { VisibilityFilters } from './styles';
 import { Months } from './helpers'; 
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
-const SelectFilter = ({ darkMode, sort, filter, dateRanges }) => ( 
+const SelectFilter = ({ darkMode, setDate, sort, filter, dateRanges }) => ( 
   <> 
     <VisibilityFilters 
       action="" 
       darkMode={darkMode}
     >
       <div className="field">
-        <label htmlFor="dateView">Date</label>
-        <select name="dateView" id="dateView">
+        {/* <label htmlFor="dateView">Date</label> */}
+        <select 
+          name="dateView" 
+          id="dateView"
+          className="dateRange"
+          onChange={(e) => setDate(e.target.value)}
+        >
           {dateRanges.map((range, index) => { 
             return (
               <option key={index} value={range.full}>{Months[range.month]} {range.year}</option>
             )
           })}
         </select>
+        <ExpandMoreIcon />
       </div>
       <div className="fieldset">
         <div className="field">
@@ -34,6 +41,7 @@ const SelectFilter = ({ darkMode, sort, filter, dateRanges }) => (
               )
             })} 
           </select>
+          <ExpandMoreIcon />
         </div>
         
         <div className="field">
@@ -47,6 +55,7 @@ const SelectFilter = ({ darkMode, sort, filter, dateRanges }) => (
             <option value="name">Alphabetical</option>
             <option value="price">Highest to Lowest</option>
           </select>
+          <ExpandMoreIcon />
         </div>
       </div>
     </VisibilityFilters> 
