@@ -131,7 +131,7 @@ export const VisibilityFilters = styled.form`
     width: 180px;    
   }  
 
-  .dateRange {
+  .form__select--date {
     background-color: transparent;
     font-size: 2rem;  
     width: 200px;
@@ -139,11 +139,6 @@ export const VisibilityFilters = styled.form`
       ? "1px solid white"
       : "1px solid black")};  
   }  
-  
-  .field {
-    position: relative;
-    display: inline-block;
-  }
 `
 
 export const Toggle = styled.button` 
@@ -173,8 +168,8 @@ export const Toggle = styled.button`
     right: 5px;
     transition: all 0.2s;
   }
-  ` 
-
+`
+  
 export const Button = styled.button`
   text-transform: uppercase;
   background-color: #676aff; 

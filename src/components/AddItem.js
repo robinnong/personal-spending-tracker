@@ -94,18 +94,18 @@ const AddItem = ({ darkMode, current, dispatch }) => {
           /> 
           <CalendarTodayIcon />
         </div>
-        <button className="add" type="submit" aria-label="add item">+</button>
+        <button className="button__add" type="submit" aria-label="add item">+</button>
       </Form>
-      <button className="hide" onClick={() => setVisibility(!isVisible)}>
+      <button className="button__hide" onClick={() => setVisibility(!isVisible)}>
         {isVisible 
           ? 
           <>
-            <span>Hide</span>
+            <span className="button__hide--labelled">Hide</span>
             <ExpandLessIcon /> 
           </>
           : 
           <>
-            <span>Show</span>
+            <span className="button__hide--labelled">Show</span>
             <ExpandMoreIcon />
           </>
           }

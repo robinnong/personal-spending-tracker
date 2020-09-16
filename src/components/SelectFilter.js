@@ -10,12 +10,12 @@ const SelectFilter = ({ darkMode, setDate, sort, filter, dateRanges }) => (
       action="" 
       darkMode={darkMode}
     >
-      <div className="field">
+      <div className="form__field">
         {/* <label htmlFor="dateView">Date</label> */}
         <select 
           name="dateView" 
           id="dateView"
-          className="dateRange"
+          className="form__select--date"
           onChange={(e) => setDate(e.target.value)}
         >
           {dateRanges.map((range, index) => { 
@@ -26,12 +26,13 @@ const SelectFilter = ({ darkMode, setDate, sort, filter, dateRanges }) => (
         </select>
         <ExpandMoreIcon />
       </div>
-      <div className="fieldset">
-        <div className="field">
+      <div className="form__fieldset">
+        <div className="form__field">
           <label htmlFor="filter">Show</label>
           <select 
             name="filter" 
             id="filter"
+            className="form__select--filter"
             onChange={(e) => filter(e.target.value)} 
           >
             <option value="">All</option>
@@ -44,7 +45,7 @@ const SelectFilter = ({ darkMode, setDate, sort, filter, dateRanges }) => (
           <ExpandMoreIcon />
         </div>
         
-        <div className="field">
+        <div className="form__field">
           <label htmlFor="sort">Sort By</label>
           <select 
             name="sort" 

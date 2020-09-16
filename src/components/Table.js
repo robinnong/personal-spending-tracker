@@ -24,7 +24,7 @@ const Table = ({ darkMode, items, deleteItem }) => {
                     <th>Total</th>
                     <th>
                         <button 
-                            className={selected.length > 0 ? "deleteButton" : "hidden deleteButton"}
+                            className={selected.length > 0 ? "button__delete" : " button__delete--hidden"}
                             onClick={() => deleteItem(selected)}>
                                 Delete
                         </button>

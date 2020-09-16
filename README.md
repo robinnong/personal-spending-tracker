@@ -11,6 +11,7 @@ A simple income/expense tracker that I'm building to learn advanced concepts in 
 - [x] Dark mode / light mode toggle
 - [x] Refactor CSS Variables to Styled Component props
 - [x] Show by date range
+- [x] Renamed classes with BEM convention
 - [ ] Allow users to edit an expense 
 - [ ] Allow users to add multiple accounts
 - [ ] Responsive layout

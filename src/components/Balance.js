@@ -11,11 +11,11 @@ const mapStateToProps = state => ({
 })
 
 const Balance = ({ total }) => (
-  <div className="summary">
-    <h2>Balance</h2>
-    <p className="balance">
+  <div className="balance">
+    <h2 className="balance__label">Balance</h2>
+    <p>
       {total < 0 ? "- " : " "}
-      <span>${Math.abs(total)}</span> CAD
+      <span className="balance__value">${Math.abs(total)}</span> CAD
     </p>
   </div>
 ) 

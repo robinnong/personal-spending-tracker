@@ -15,10 +15,10 @@ const mapStateToProps = (state) => ({ darkMode: state.darkMode });
 const App = ({ darkMode, dispatch }) => (
   <Body darkMode={darkMode}>
     <Header darkMode={darkMode}>  
-      <div className="headerBar">
+      <div className="header__bar">
         <Button>Log In</Button>
         <Toggle
-          className={darkMode ? "move" : null}
+          className={darkMode ? "toggle__theme--move" : "toggle__theme"}
           aria-label="Toggle light and dark mode"
           onClick={() => dispatch(setDarkMode())}
         >

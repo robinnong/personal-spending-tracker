@@ -13,24 +13,22 @@ const Item = ({ onClick, dateString, name, category, price }) => {
     },[])
     
     return (
-        <tr>  
-            <td className="category">
-                <div className="categoryIcon">
-                    {icon}
-                </div>
+        <tr className="card">  
+            <td className="card__category">
+                <div className="card__icon">{icon}</div>
             </td>
-            <td className="itemCard">
-                <span className="name">{name}</span> 
-                <span className="date">{dateString}</span> 
+            <td className="card__content">
+                <span className="card__name">{name}</span> 
+                <span className="card__date">{dateString}</span> 
             </td>  
-            <td className="price">
+            <td className="card__price">
                 {price < 0 ? "- " : " "}
                 ${Math.abs(price)}
             </td>
             <td> 
                 <button 
-                className="checkbox" 
-                aria-label="checkbox" 
+                    className="checkbox__selection" 
+                    aria-label="checkbox" 
                     onClick={() => {
                         onClick()
                         isChecked(!checked)
